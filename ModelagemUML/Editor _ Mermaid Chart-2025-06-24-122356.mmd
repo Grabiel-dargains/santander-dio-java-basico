@@ -1,0 +1,51 @@
+---
+config:
+  theme: dark
+---
+classDiagram
+direction TB
+    class Iphone {
+	    +String OS
+	    +String modelo
+	    +boot()
+	    +desligar()
+	    +reiniciar()
+	    +atualizar()
+	    +configurações()
+    }
+    class ReprodutorMusical {
+	    +String arquivosSuportados
+	    +String versão
+	    +playFile()
+	    +pauseFile()
+	    +selectFile(String: musica)
+	    +volumeUp()
+	    +volumeDown()
+	    +streamToBTDevice(String: dispositivo))
+	    +shuffle()
+    }
+    class AparelhoTelefonico {
+	    +String numeroDeCelular
+	    +int sinal
+	    +ligar(String numero)
+	    +volumeUp()
+	    +volumeDown()
+	    +vivaVoz()
+	    +iniciarCorreioVoz()
+    }
+    class NavegadorInternet {
+	    +String versao
+	    +exibirPagina(String url)
+	    +adicionarNovaAba()
+	    +atualizarPagina()
+	    +salvarSenha()
+	    +fecharAba()
+    }
+
+	<<Interface>> ReprodutorMusical
+	<<Interface>> AparelhoTelefonico
+	<<Interface>> NavegadorInternet
+
+    Iphone <|-- ReprodutorMusical
+    Iphone <|-- AparelhoTelefonico
+    Iphone <|-- NavegadorInternet
